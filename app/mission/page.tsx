@@ -127,10 +127,10 @@ export default function MissionPage() {
               <div className="flex-shrink-0 text-3xl font-thin text-gray-900">03</div>
               <div>
                 <h5 className="text-xl font-normal tracking-wide text-gray-900 mb-3">
-                  小さくて強いチーム
+                  分散型の技術者集団
                 </h5>
                 <p className="text-gray-600 leading-relaxed">
-                  人数は少なくても、国内外の技術と交渉力を武器に世界に挑みます。
+                  大牟田、横浜、そして世界各地。優秀な開発者は最適な環境で力を発揮し、経営陣が彼らの技術を活かす仕事をつなぐ。地理的制約を超えた組織です。
                 </p>
               </div>
             </div>
