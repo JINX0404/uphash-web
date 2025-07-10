@@ -109,8 +109,46 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 会社概要セクション */}
+      {/* 代表挨拶セクション */}
       <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+              代表挨拶
+            </h2>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p>
+                私たちは「現実を記録する」という行為に、本質的な意味を問い直す時代に生きています。<br />
+                それは、記録＝保存ではなく、「再構築し、次に使うための知」として扱うべきものです。
+              </p>
+              <p>
+                私はこれまで、ゲームや映画といったエンターテインメントの世界で、<strong className="font-normal text-gray-900">膨大な仮想空間と人の感情がどうつながるか</strong>を考えてきました。<br />
+                その過程で痛感したのは、<strong className="font-normal text-gray-900">"リアルとバーチャルの線引きはすでに崩れている"</strong>ということです。
+              </p>
+              <p>
+                UPHASHは、3Dスキャン、画像認識、生成AI、物理ベースレンダリングなど、空間と知能の交差点に立つ技術を統合し、<br />
+                <strong className="font-normal text-gray-900">「デジタルで保存された現実」がそのまま社会インフラになる世界</strong>を前提に動いています。
+              </p>
+              <p>
+                私たちのビジネスは、テクノロジーではなく<strong className="font-normal text-gray-900">思想が先にある</strong>ことが特徴です。<br />
+                空間をどう捉え、時間をどう刻むかという抽象的な問いに対して、私たちなりの答えを技術で形にしていくこと。<br />
+                それが今の私たちの仕事です。
+              </p>
+              <p>
+                福岡と東京を拠点に、少数の技術者とともに走っています。<br />
+                世界のスキャン技術をつなぎ、ただの輸入商社では終わらせない。<br />
+                UPHASHは、日本から"空間の未来"を逆算して設計する会社でありたいと考えています。
+              </p>
+              <p className="text-right pt-6 text-gray-900">
+                — 代表取締役 今井 翔太
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 会社概要セクション */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             会社概要
