@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-screen-xl mx-auto px-4 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* ロゴ・会社情報 */}
           <div className="md:col-span-2">
             <Image
@@ -27,9 +27,9 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* メニュー */}
+          {/* 会社案内 */}
           <div>
-            <h3 className="text-xs tracking-[0.3em] mb-6">MENU</h3>
+            <h3 className="text-xs tracking-[0.3em] mb-6">会社案内</h3>
             <ul className="space-y-4">
               <li>
                 <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors">
@@ -37,8 +37,25 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/mission" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  ミッション・ビジョン
+                </Link>
+              </li>
+              <li>
                 <Link href="/news" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  ニュース
+                  活動報告
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* その他メニュー */}
+          <div>
+            <h3 className="text-xs tracking-[0.3em] mb-6">サービス</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/services" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  製品・サービス
                 </Link>
               </li>
               <li>
