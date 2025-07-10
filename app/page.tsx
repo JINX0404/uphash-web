@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
 import CompanyInfo from "@/components/sections/CompanyInfo";
 import NewsPreview from "@/components/sections/NewsPreview";
-import { getSortedNewsData } from "@/lib/markdown";
 
 export const metadata: Metadata = {
   title: "UPHASH Inc. - イノベーションを通じて未来を創造",
@@ -29,9 +28,6 @@ export const metadata: Metadata = {
  * ヒーローセクション、会社紹介、最新ニュースを表示
  */
 export default function Home() {
-  // 最新ニュースを取得
-  const newsData = getSortedNewsData();
-
   return (
     <>
       {/* ヒーローセクション */}
@@ -41,30 +37,30 @@ export default function Home() {
       <CompanyInfo />
 
       {/* 最新ニュース */}
-      <NewsPreview posts={newsData} />
+      <NewsPreview />
 
       {/* CTA セクション */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
+      <section className="py-32 bg-gray-900 text-white">
+        <div className="max-w-screen-xl mx-auto px-4 lg:px-8 text-center">
+          <h2 className="text-xs tracking-[0.3em] text-gray-400 mb-6">JOIN US</h2>
+          <h3 className="text-4xl lg:text-5xl font-thin tracking-wider mb-8">
             一緒に未来を創りましょう
-          </h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
-            私たちと一緒に、テクノロジーの力で世界を変えていきませんか？
-            新しい挑戦を求める仲間を募集しています。
+          </h3>
+          <p className="text-lg font-thin text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            革新的な技術で社会に貢献したいエンジニアを募集しています
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="/recruit"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-wider text-gray-900 bg-white hover:bg-gray-100 transition-colors"
             >
               採用情報を見る
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-wider text-white border border-white hover:bg-white hover:text-gray-900 transition-colors"
             >
-              お問い合わせする
+              お問い合わせ
             </a>
           </div>
         </div>

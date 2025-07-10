@@ -11,6 +11,7 @@ export type NewsPost = {
   title: string;
   date: string;
   excerpt: string;
+  description?: string;
   content?: string;
 };
 
@@ -33,6 +34,7 @@ export function getSortedNewsData(): NewsPost[] {
         title: matterResult.data.title || 'Untitled',
         date: matterResult.data.date || new Date().toISOString(),
         excerpt: matterResult.data.excerpt || '',
+        description: matterResult.data.description || matterResult.data.excerpt || '',
       };
     });
 
@@ -66,4 +68,9 @@ export async function getNewsData(slug: string): Promise<NewsPost | null> {
   } catch {
     return null;
   }
+}
+
+export async function getLatestNews(count: number = 3): Promise<NewsPost[]> {
+  const allNews = getSortedNewsData();
+  return allNews.slice(0, count);
 }
