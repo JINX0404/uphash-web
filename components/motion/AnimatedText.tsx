@@ -13,10 +13,13 @@ export default function AnimatedText({ text, className = "", delay = 0 }: Animat
 
   const container = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: delay },
-    }),
+      transition: { 
+        staggerChildren: 0.08, 
+        delayChildren: delay 
+      },
+    },
   };
 
   const child = {
@@ -24,7 +27,7 @@ export default function AnimatedText({ text, className = "", delay = 0 }: Animat
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
@@ -33,7 +36,7 @@ export default function AnimatedText({ text, className = "", delay = 0 }: Animat
       opacity: 0,
       y: 20,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },

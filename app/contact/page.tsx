@@ -1,6 +1,6 @@
 "use client";
 
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import { useState } from "react";
 import { useForm } from "@formspree/react";
 

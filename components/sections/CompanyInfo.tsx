@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollReveal from "@/components/motion/ScrollReveal";
-import ParallaxSection from "@/components/motion/ParallaxSection";
+// import ParallaxSection from "@/components/motion/ParallaxSection";
 import { useRef } from "react";
 
 /**
