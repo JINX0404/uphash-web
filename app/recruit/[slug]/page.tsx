@@ -125,19 +125,20 @@ export default async function PositionDetailPage({ params }: Props) {
       <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-screen-xl mx-auto px-4 lg:px-8 text-center">
           <h3 className="text-3xl font-thin tracking-wider mb-8">
-            この職種に応募する
+            興味を持っていただけましたか？
           </h3>
           <p className="text-lg font-thin text-gray-300 mb-12 max-w-2xl mx-auto">
-            ご興味をお持ちいただけましたら、ぜひお気軽にご連絡ください
+            まずは気軽にお話ししましょう。<br />
+            あなたのこれまでの経験や、やりたいことを聞かせてください。
           </p>
           <a
-            href={`mailto:recruit@uphash.co.jp?subject=${encodeURIComponent(`${position.title}への応募`)}`}
+            href={`mailto:admin@uphash.net?subject=${encodeURIComponent(`${position.title}について`)}`}
             className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-wider text-gray-900 bg-white hover:bg-gray-100 transition-colors"
           >
-            応募メールを送る
+            メールで話を聞いてみる
           </a>
           <p className="mt-6 text-sm text-gray-400">
-            recruit@uphash.co.jp
+            admin@uphash.net
           </p>
         </div>
       </section>
