@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { getAllPositions } from "@/lib/recruit";
 
 export const metadata: Metadata = {
   title: "採用情報 | UPHASH Inc.",
@@ -16,47 +17,10 @@ export const metadata: Metadata = {
 };
 
 /**
- * 採用情報ページ - NK LITE風デザイン（刷新版）
+ * 採用情報ページ - NK LITE風デザイン（Markdown対応版）
  */
-export default function RecruitPage() {
-  const positions = [
-    {
-      id: "3d-scan-engineer",
-      title: "3Dスキャンエンジニア",
-      description: "マルチカメラ制御、スキャンワークフロー構築、画像処理の自動化",
-      skills: ["Python", "C++", "GPU処理", "Gaussian Splatting"],
-      workStyle: "完全リモート",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-        </svg>
-      ),
-    },
-    {
-      id: "webgl-unreal-engineer",
-      title: "WebGL / Unreal エンジニア",
-      description: "スキャンデータを表示・操作するリアルタイム3Dビューアの開発",
-      skills: ["Three.js", "PlayCanvas", "Unity/Unreal Engine", "Omniverse"],
-      workStyle: "完全リモート",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
-      ),
-    },
-    {
-      id: "technical-sales",
-      title: "テクニカルセールス / プロダクトローカライザー",
-      description: "海外製スキャンプロダクトの技術理解＋顧客提案",
-      skills: ["英語読解", "ハード/ソフト理解力", "顧客対応", "技術提案"],
-      workStyle: "基本リモート（対面商談も一部あり）",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      ),
-    },
-  ];
+export default async function RecruitPage() {
+  const positions = await getAllPositions();
 
   const workPolicies = [
     {
@@ -160,12 +124,12 @@ export default function RecruitPage() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {positions.map((position) => (
-              <div key={position.id} className="bg-white border border-gray-200 p-8 hover:shadow-lg transition-shadow">
-                <div className="text-gray-400 mb-6">
-                  {position.icon}
-                </div>
-                
-                <h4 className="text-xl font-normal tracking-wide text-gray-900 mb-4">
+              <Link
+                key={position.slug}
+                href={`/recruit/${position.slug}`}
+                className="group block bg-white border border-gray-200 p-8 hover:shadow-lg transition-all hover:-translate-y-1"
+              >
+                <h4 className="text-xl font-normal tracking-wide text-gray-900 mb-4 group-hover:text-gray-700">
                   {position.title}
                 </h4>
                 
@@ -173,23 +137,39 @@ export default function RecruitPage() {
                   {position.description}
                 </p>
 
-                <div className="mb-6">
-                  <h5 className="text-xs tracking-wider text-gray-700 mb-3">必要スキル</h5>
-                  <div className="flex flex-wrap gap-2">
-                    {position.skills.map((skill, index) => (
-                      <span key={index} className="text-xs px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
-                        {skill}
-                      </span>
-                    ))}
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start gap-2">
+                    <span className="text-xs text-gray-500 flex-shrink-0">勤務地:</span>
+                    <span className="text-xs text-gray-700">{position.location}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-xs text-gray-500 flex-shrink-0">雇用形態:</span>
+                    <span className="text-xs text-gray-700">{position.employment_type}</span>
                   </div>
                 </div>
 
-                <div className="text-xs text-gray-600 tracking-wider">
-                  {position.workStyle}
+                {position.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {position.tags.map((tag, index) => (
+                      <span key={index} className="text-xs px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-6 text-sm tracking-wider text-gray-900 group-hover:text-gray-700">
+                  詳細を見る →
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+
+          {positions.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500">現在募集中の職種はありません。</p>
+            </div>
+          )}
         </div>
       </section>
 
