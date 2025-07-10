@@ -123,7 +123,7 @@ export default function AboutPage() {
               </p>
               <p>
                 私はこれまで、ゲームや映画といったエンターテインメントの世界で、<strong className="font-normal text-gray-900">膨大な仮想空間と人の感情がどうつながるか</strong>を考えてきました。<br />
-                その過程で痛感したのは、<strong className="font-normal text-gray-900">"リアルとバーチャルの線引きはすでに崩れている"</strong>ということです。
+                その過程で痛感したのは、<strong className="font-normal text-gray-900">&ldquo;リアルとバーチャルの線引きはすでに崩れている&rdquo;</strong>ということです。
               </p>
               <p>
                 UPHASHは、3Dスキャン、画像認識、生成AI、物理ベースレンダリングなど、空間と知能の交差点に立つ技術を統合し、<br />
@@ -137,7 +137,7 @@ export default function AboutPage() {
               <p>
                 福岡と東京を拠点に、少数の技術者とともに走っています。<br />
                 世界のスキャン技術をつなぎ、ただの輸入商社では終わらせない。<br />
-                UPHASHは、日本から"空間の未来"を逆算して設計する会社でありたいと考えています。
+                UPHASHは、日本から&ldquo;空間の未来&rdquo;を逆算して設計する会社でありたいと考えています。
               </p>
               <p className="text-right pt-6 text-gray-900">
                 — 代表取締役 今井 翔太
@@ -263,7 +263,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   「必ず訪れる AI × XRの時代から逆算する」という思想のもと、
-                  ただの活用者ではなく、<strong className="font-normal text-gray-900">"この分野を自分たちで切り拓いていく"</strong>という覚悟で専門特化を加速。
+                  ただの活用者ではなく、<strong className="font-normal text-gray-900">&ldquo;この分野を自分たちで切り拓いていく&rdquo;</strong>という覚悟で専門特化を加速。
                 </p>
                 <p className="pt-4">
                   UPHASHは今、スキャン、生成、視覚化、流通、保存という

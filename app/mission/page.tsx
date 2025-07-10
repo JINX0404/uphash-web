@@ -80,7 +80,7 @@ export default function MissionPage() {
                 人の判断、学び、創造が拡張される世界。
               </p>
               <p className="pt-4">
-                私たちは、空間を"ただの背景"から"操作可能な情報源"へと変えていく<br />
+                私たちは、空間を&ldquo;ただの背景&rdquo;から&ldquo;操作可能な情報源&rdquo;へと変えていく<br />
                 そんな未来を、構想だけでなく、技術と実装で切り開いていきます。
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function MissionPage() {
                   再現性と再編集性にこだわる
                 </h5>
                 <p className="text-gray-600 leading-relaxed">
-                  "かっこいいデモ"より、"あとから使えるデータ"を重視します。
+                  &ldquo;かっこいいデモ&rdquo;より、&ldquo;あとから使えるデータ&rdquo;を重視します。
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function MissionPage() {
                   人の役に立つ尖り方
                 </h5>
                 <p className="text-gray-600 leading-relaxed">
-                  親会社から受け継いだ「人に喜ばれる」という判断基準を、私たちは"空間"という切り口で実現しようとしています。
+                  親会社から受け継いだ「人に喜ばれる」という判断基準を、私たちは&ldquo;空間&rdquo;という切り口で実現しようとしています。
                 </p>
               </div>
             </div>
