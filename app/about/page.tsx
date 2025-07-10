@@ -20,9 +20,26 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   // 沿革データ
   const history = [
-    { year: "2022年8月", event: "法人設立" },
-    { year: "2023年11月", event: "今井が事業承継、経営陣刷新" },
-    { year: "2024年5月", event: "グループ会社の事業部を吸収合併" },
+    { 
+      year: "2022年8月", 
+      event: "UPHASHの前身「ファンコネ」が設立",
+      detail: "ファンダムをテーマにしたコミュニティアプリケーション開発を目指し、木村情報技術グループの新規事業としてスタート。"
+    },
+    { 
+      year: "2023年11月", 
+      event: "今井翔太が事業を承継し、組織を再構築",
+      detail: "元Epic Games Unreal Engine/Fortnite日本担当の今井が代表取締役就任。社名変更と事業領域の転換を構想。"
+    },
+    { 
+      year: "2024年5月", 
+      event: "グループ会社ASK Projectの画像処理・人工知能部門を吸収合併",
+      detail: "佐賀大学院・有明高専出身で半導体と人工知能に精通したエンジニア大塩悠貴がCTOとして参画。組織の技術基盤を一新。"
+    },
+    {
+      year: "2025年初頭",
+      event: "株式会社UPHASHへ正式に社名変更",
+      detail: "登記先を佐賀から福岡・天神に、本社機能を東京・虎ノ門に設置。AIと空間処理の融合による社会インフラ構築へ本格シフト。"
+    }
   ];
 
   // チームメンバーデータ
@@ -167,14 +184,14 @@ export default function AboutPage() {
           </h2>
           <div className="mt-4 w-20 h-0.5 bg-gray-900 mb-12"></div>
           
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <div className="relative">
               {/* 縦線 */}
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-300"></div>
               
               {/* 沿革アイテム */}
               {history.map((item, index) => (
-                <div key={index} className="relative pl-8 pb-8 last:pb-0">
+                <div key={index} className="relative pl-12 pb-12 last:pb-8">
                   {/* ドット */}
                   <div className="absolute left-0 top-2 w-2 h-2 bg-gray-900 rounded-full -translate-x-1/2"></div>
                   
@@ -183,12 +200,38 @@ export default function AboutPage() {
                     <time className="text-sm text-gray-600 font-light">
                       {item.year}
                     </time>
-                    <p className="mt-1 text-lg text-gray-900">
+                    <h3 className="mt-1 text-lg text-gray-900 font-normal mb-2">
                       {item.event}
-                    </p>
+                    </h3>
+                    {item.detail && (
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.detail}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* 転換点セクション */}
+            <div className="mt-16 pt-16 border-t border-gray-200">
+              <h3 className="text-xl font-normal text-gray-900 mb-6">
+                転換点：Gaussian Splatting への挑戦
+              </h3>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  今井が約20年、映画やゲームで培った3D CGの知見と、AI・画像認識の融合によって、
+                  2023年の研究発表以降、世界が注目する「Gaussian Splatting」に本格的に取り組む。
+                </p>
+                <p>
+                  「必ず訪れる AI × XRの時代から逆算する」という思想のもと、
+                  ただの活用者ではなく、<strong className="font-normal text-gray-900">"この分野を自分たちで切り拓いていく"</strong>という覚悟で専門特化を加速。
+                </p>
+                <p className="pt-4">
+                  UPHASHは今、スキャン、生成、視覚化、流通、保存という
+                  <strong className="font-normal text-gray-900">空間の全ライフサイクル</strong>を再定義する企業へと進化している。
+                </p>
+              </div>
             </div>
           </div>
         </div>
