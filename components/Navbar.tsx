@@ -18,8 +18,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
+      <nav className="mx-auto px-6 lg:px-12" aria-label="Top">
         <div className="flex w-full items-center justify-between py-6">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
@@ -37,7 +37,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-sm font-light text-gray-600 hover:text-gray-900 transition-all duration-300 tracking-wider"
               >
                 {link.name}
               </Link>

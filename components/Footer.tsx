@@ -1,48 +1,85 @@
-import Link from "next/link"
+import Link from "next/link";
+import Image from "next/image";
 
-const footerNavigation = {
-  main: [
-    { name: "ホーム", href: "/" },
-    { name: "会社概要", href: "/about" },
-    { name: "ニュース", href: "/news" },
-    { name: "採用情報", href: "/recruit" },
-    { name: "お問い合わせ", href: "/contact" },
-    { name: "有料ブログ", href: "/premium-blog" },
-  ],
-  social: [
-    { name: "Twitter", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "GitHub", href: "#" },
-  ],
-}
-
+/**
+ * フッター - NK LITE風ミニマルデザイン
+ */
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 mt-auto">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {footerNavigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
-              <Link href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-                {item.name}
+    <footer className="bg-white border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* ロゴと会社情報 */}
+          <div className="md:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/logo-uphash.png"
+                alt="UPHASH Inc."
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
+            </Link>
+            <p className="text-sm text-gray-600 font-light mb-4">
+              株式会社 ＵＰＨＡＳＨ<br />
+              Spatial Computing Solution
+            </p>
+            <p className="text-sm text-gray-500 font-light">
+              本社：福岡県福岡市中央区天神１-１１−１
+            </p>
+          </div>
+
+          {/* ナビゲーション */}
+          <div>
+            <h3 className="text-sm font-light text-gray-900 mb-4 tracking-wider">MENU</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900 font-light transition-colors duration-300">
+                  会社概要
+                </Link>
+              </li>
+              <li>
+                <Link href="/news" className="text-sm text-gray-600 hover:text-gray-900 font-light transition-colors duration-300">
+                  ニュース
+                </Link>
+              </li>
+              <li>
+                <Link href="/recruit" className="text-sm text-gray-600 hover:text-gray-900 font-light transition-colors duration-300">
+                  採用情報
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900 font-light transition-colors duration-300">
+                  お問い合わせ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* コンタクト */}
+          <div>
+            <h3 className="text-sm font-light text-gray-900 mb-4 tracking-wider">CONTACT</h3>
+            <div className="space-y-3">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 font-light transition-colors duration-300"
+              >
+                <span className="mr-2">お問い合わせフォーム</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
-          ))}
-        </nav>
-        <div className="mt-10 flex justify-center space-x-10">
-          {footerNavigation.social.map((item) => (
-            <Link key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">{item.name}</span>
-              <span className="text-sm">{item.name}</span>
-            </Link>
-          ))}
+          </div>
         </div>
-        <div className="mt-10 border-t border-gray-900/10 pt-8">
-          <p className="text-center text-xs leading-5 text-gray-500">
+
+        {/* コピーライト */}
+        <div className="mt-12 pt-8 border-t border-gray-100">
+          <p className="text-xs text-gray-500 font-light text-center md:text-left">
             &copy; {new Date().getFullYear()} UPHASH Inc. All rights reserved.
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

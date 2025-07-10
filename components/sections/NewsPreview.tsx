@@ -1,105 +1,64 @@
 import Link from "next/link";
-import { NewsPost } from "@/lib/markdown";
-
-interface NewsPreviewProps {
-  posts: NewsPost[];
-}
+import { getLatestNews } from "@/lib/markdown";
 
 /**
- * ニュースプレビューセクション
- * 最新のニュース記事3件を表示するコンポーネント
- * ホームページで使用
+ * ニュースプレビューセクション - NK LITE風ミニマルデザイン
  */
-export default function NewsPreview({ posts }: NewsPreviewProps) {
-  // 最新3件のみ表示
-  const latestPosts = posts.slice(0, 3);
+export default async function NewsPreview() {
+  const news = await getLatestNews(3);
 
   return (
     <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
-        {/* セクションヘッダー */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            最新ニュース
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* セクションタイトル */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 tracking-wide">
+            最新情報
           </h2>
-          <p className="text-xl text-gray-600">
-            UPHASH Inc.の最新情報をお届けします
-          </p>
+          <div className="mt-4 w-20 h-0.5 bg-gray-900"></div>
         </div>
 
         {/* ニュースカード */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {latestPosts.map((post) => (
-            <article
-              key={post.slug}
-              className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow overflow-hidden"
-            >
-              {/* カード画像（プレースホルダー） */}
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-white opacity-50"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              {/* カードコンテンツ */}
-              <div className="p-6">
-                <time className="text-sm text-gray-500">
-                  {new Date(post.date).toLocaleDateString('ja-JP', {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {news.map((item) => (
+            <article key={item.slug} className="group">
+              <Link href={`/news/${item.slug}`} className="block">
+                {/* 日付 */}
+                <time className="text-sm text-gray-500 font-light">
+                  {new Date(item.date).toLocaleDateString('ja-JP', {
                     year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
+                    month: '2-digit',
+                    day: '2-digit'
+                  }).replace(/\//g, '.')}
                 </time>
                 
-                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3 line-clamp-2">
-                  {post.title}
+                {/* タイトル */}
+                <h3 className="mt-2 text-xl font-light text-gray-900 group-hover:text-gray-600 transition-colors duration-300">
+                  {item.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
+                {/* 概要 */}
+                <p className="mt-3 text-gray-600 font-light line-clamp-3">
+                  {item.description}
                 </p>
                 
-                <Link
-                  href={`/news/${post.slug}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
-                >
-                  続きを読む
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
+                {/* リンク */}
+                <div className="mt-4 flex items-center text-sm font-light text-gray-900 group-hover:text-gray-600 transition-colors duration-300">
+                  <span className="mr-2">続きを読む</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 5l7 7-7 7" />
                   </svg>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </article>
           ))}
         </div>
 
-        {/* もっと見るリンク */}
-        <div className="text-center">
+        {/* すべてのニュースへのリンク */}
+        <div className="mt-16 text-center">
           <Link
             href="/news"
-            className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-colors"
+            className="inline-flex items-center justify-center px-8 py-4 text-sm font-light tracking-wider text-gray-900 border border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
           >
             すべてのニュースを見る
           </Link>
