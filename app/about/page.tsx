@@ -21,15 +21,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   // 沿革データ
   const history = [
-    { year: "2020年4月", event: "UPHASH Inc. 設立" },
-    { year: "2020年10月", event: "AIソリューション事業開始" },
-    { year: "2021年3月", event: "シリーズA資金調達完了" },
-    { year: "2021年8月", event: "従業員数50名突破" },
-    { year: "2022年1月", event: "東京オフィス拡張移転" },
-    { year: "2022年6月", event: "ブロックチェーン事業部設立" },
-    { year: "2023年4月", event: "海外展開開始（シンガポール）" },
-    { year: "2023年12月", event: "イノベーション大賞受賞" },
-    { year: "2024年1月", event: "従業員数150名突破" },
+    { year: "2022年8月", event: "法人設立" },
+    { year: "2023年11月", event: "今井が事業承継　経営陣刷新" },
+    { year: "2024年5月", event: "グループ会社の事業部を吸収合併" },
   ];
 
   return (
@@ -55,14 +49,14 @@ export default function AboutPage() {
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974"
-                  alt="代表取締役 山田太郎"
+                  alt="代表取締役 今井翔太"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blue-100 rounded-2xl p-6 shadow-lg">
-                <p className="text-lg font-bold text-gray-900">山田 太郎</p>
-                <p className="text-gray-600">代表取締役 CEO</p>
+                <p className="text-lg font-bold text-gray-900">今井 翔太</p>
+                <p className="text-gray-600">CEO/代表取締役</p>
               </div>
             </div>
 
@@ -70,23 +64,19 @@ export default function AboutPage() {
             <div className="lg:pl-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  私たちUPHASH Inc.は、「イノベーションを通じて未来を創造する」という
-                  ミッションのもと、2020年に設立されました。
+                  常識に挑戦し、可能性を再定義することこそが進歩の本質です。
+                  私たちの最大の資産は、既存の枠を超える思考力と、
+                  それを現実に変える実行力です。
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  設立から5年、私たちは常に最先端の技術に挑戦し、
-                  お客様のビジネスに真の価値を提供することを追求してきました。
-                  AI、ブロックチェーン、クラウドコンピューティングなど、
-                  革新的な技術を組み合わせることで、これまでにない
-                  ソリューションを生み出しています。
+                  今日の大胆な発想が、明日の当たり前を作り出すのです。
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  これからも私たちは、技術の力で社会課題を解決し、
-                  より良い未来を創造していきます。皆様とともに、
-                  新しい価値を生み出していけることを楽しみにしています。
+                  私たちUPHASH Inc.は、革新的な技術とビジョンを通じて、
+                  社会に新たな価値を提供し続けます。
                 </p>
                 <p className="text-gray-700 font-semibold">
-                  代表取締役 山田 太郎
+                  CEO/代表取締役 今井 翔太
                 </p>
               </div>
             </div>
@@ -105,46 +95,52 @@ export default function AboutPage() {
             <dl className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="border-l-4 border-blue-600 pl-6">
                 <dt className="text-sm font-semibold text-gray-600 mb-1">会社名</dt>
-                <dd className="text-lg text-gray-900">UPHASH Inc.</dd>
+                <dd className="text-lg text-gray-900">株式会社 ＵＰＨＡＳＨ</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6">
-                <dt className="text-sm font-semibold text-gray-600 mb-1">設立年月日</dt>
-                <dd className="text-lg text-gray-900">2020年4月1日</dd>
+                <dt className="text-sm font-semibold text-gray-600 mb-1">設立</dt>
+                <dd className="text-lg text-gray-900">2022年</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6">
                 <dt className="text-sm font-semibold text-gray-600 mb-1">代表者</dt>
-                <dd className="text-lg text-gray-900">代表取締役 山田 太郎</dd>
+                <dd className="text-lg text-gray-900">今井 翔太</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6">
                 <dt className="text-sm font-semibold text-gray-600 mb-1">資本金</dt>
-                <dd className="text-lg text-gray-900">1億円</dd>
+                <dd className="text-lg text-gray-900">1億6000万円（資本準備金を含む）</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6">
-                <dt className="text-sm font-semibold text-gray-600 mb-1">従業員数</dt>
-                <dd className="text-lg text-gray-900">150名（2024年1月現在）</dd>
+                <dt className="text-sm font-semibold text-gray-600 mb-1">主要取引銀行</dt>
+                <dd className="text-lg text-gray-900">三井住友銀行</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6">
-                <dt className="text-sm font-semibold text-gray-600 mb-1">所在地</dt>
+                <dt className="text-sm font-semibold text-gray-600 mb-1">本社所在地</dt>
                 <dd className="text-lg text-gray-900">
-                  〒100-0001<br />
-                  東京都千代田区千代田1-1-1<br />
-                  UPHASHビル 10F
+                  福岡県福岡市中央区天神１-１１−１
                 </dd>
+              </div>
+              
+              <div className="border-l-4 border-blue-600 pl-6">
+                <dt className="text-sm font-semibold text-gray-600 mb-1">有明開発室</dt>
+                <dd className="text-lg text-gray-900">福岡県大牟田市内</dd>
+              </div>
+              
+              <div className="border-l-4 border-blue-600 pl-6">
+                <dt className="text-sm font-semibold text-gray-600 mb-1">横浜研究所</dt>
+                <dd className="text-lg text-gray-900">神奈川県横浜市内</dd>
               </div>
               
               <div className="border-l-4 border-blue-600 pl-6 md:col-span-2">
                 <dt className="text-sm font-semibold text-gray-600 mb-1">事業内容</dt>
                 <dd className="text-lg text-gray-900">
                   <ul className="list-disc list-inside space-y-1">
-                    <li>AIソリューション開発・コンサルティング</li>
-                    <li>ブロックチェーン技術開発</li>
-                    <li>システムインテグレーション</li>
-                    <li>デジタルトランスフォーメーション支援</li>
+                    <li>Spatial Computing Solution</li>
+                    <li>今のこの瞬間を保存する</li>
                   </ul>
                 </dd>
               </div>
@@ -153,8 +149,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 沿革セクション */}
+      {/* チーム紹介セクション */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            チーム紹介
+          </h2>
+          
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* 今井翔太 */}
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+              <div className="flex items-start space-x-6">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200"
+                    alt="今井翔太"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">今井翔太</h3>
+                  <p className="text-blue-600 font-medium mb-4">CEO/代表取締役</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    常識に挑戦し、可能性を再定義することこそが進歩の本質です。私たちの最大の資産は、既存の枠を超える思考力と、それを現実に変える実行力です。今日の大胆な発想が、明日の当たり前を作り出すのです。
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* 大塩悠貴 */}
+            <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+              <div className="flex items-start space-x-6">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200"
+                    alt="大塩悠貴"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">大塩悠貴</h3>
+                  <p className="text-blue-600 font-medium mb-4">CTO/リードプログラマ</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    技術は手段であり、目的ではありません。私たちの使命は、AIを通じて人々の生活に意味ある変化をもたらすことです。イノベーションは大切ですが、それが現実世界の問題を解決する時にこそ、真の価値が生まれるのです。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 沿革セクション */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
             沿革
