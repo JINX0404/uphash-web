@@ -139,10 +139,10 @@ export default function MissionPage() {
               <div className="flex-shrink-0 text-3xl font-thin text-gray-900">04</div>
               <div>
                 <h5 className="text-xl font-normal tracking-wide text-gray-900 mb-3">
-                  人の役に立つ尖り方
+                  問題解決に徹する
                 </h5>
                 <p className="text-gray-600 leading-relaxed">
-                  親会社から受け継いだ「人に喜ばれる」という判断基準を、私たちは&ldquo;空間&rdquo;という切り口で実現しようとしています。
+                  押し売りはしない。顧客が本当に必要とする問題解決を、最先端の技術力と情報力で提供する。それが私たちの基本姿勢です。
                 </p>
               </div>
             </div>
