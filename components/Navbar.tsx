@@ -51,15 +51,6 @@ export default function Navbar() {
                 ))}
               </div>
               
-              {/* CTA ボタン */}
-              <div className="ml-8 flex items-center space-x-4">
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 text-xs tracking-widest text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
-                >
-                  お問い合わせ
-                </Link>
-              </div>
             </div>
 
             {/* モバイルメニューボタン */}
@@ -111,13 +102,6 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                className="block mx-4 mt-6 px-6 py-3 text-sm tracking-wider text-center text-white bg-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                お問い合わせ
-              </Link>
             </nav>
           </div>
         </div>
