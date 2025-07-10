@@ -33,11 +33,11 @@ export default async function RecruitPage() {
         <div className="relative z-10 text-center px-4">
           <ScrollReveal>
             <h1 className="text-3xl lg:text-5xl font-thin tracking-wider text-gray-900 mb-6">
-              技術的な仲間を探しています
+              共同体の仲間を探しています
             </h1>
             <p className="text-lg font-thin tracking-wide text-gray-700 max-w-2xl mx-auto">
-              少人数で運営している会社だからこそ、<br className="hidden sm:inline" />
-              一人ひとりの技術と想いが、直接プロダクトに反映されます。
+              強みを引き出し合い、弱みを補い合う。<br className="hidden sm:inline" />
+              そんな「共同体」として、共に進化していく仲間を求めています。
             </p>
           </ScrollReveal>
         </div>
@@ -48,39 +48,39 @@ export default async function RecruitPage() {
         <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-xs tracking-[0.3em] text-gray-600 mb-6">OUR APPROACH</h2>
+              <h2 className="text-xs tracking-[0.3em] text-gray-600 mb-6">OUR PHILOSOPHY</h2>
               <h3 className="text-3xl font-thin tracking-wider text-gray-900 mb-12">
-                ポジションベースの採用
+                共同体としての採用
               </h3>
               
               <div className="space-y-8 text-left">
                 <div className="bg-white p-8 border border-gray-200">
                   <h4 className="text-lg font-normal tracking-wide text-gray-900 mb-3">
-                    明確な役割と責任
+                    強みを引き出し合う配置
                   </h4>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    各ポジションには明確なミッションがあります。「なんでもやる」ではなく、
-                    あなたの専門性を活かして、特定の領域で価値を生み出してください。
+                    私たちは会社を「共同体」と考えています。あなたの強みが最も活きる配置を
+                    常に見直し、チーム全体で最大の成果を生み出します。
                   </p>
                 </div>
 
                 <div className="bg-white p-8 border border-gray-200">
                   <h4 className="text-lg font-normal tracking-wide text-gray-900 mb-3">
-                    柔軟な契約形態
+                    弱点を補い合う文化
                   </h4>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    正社員、業務委託、副業、週1日〜フルタイムまで。
-                    あなたのライフスタイルに合わせた関わり方を一緒に見つけます。
+                    少人数だからこそ、お互いの特性を深く理解できます。
+                    誰かの弱点は、別の誰かの強みでカバーする。それが私たちの基本姿勢です。
                   </p>
                 </div>
 
                 <div className="bg-white p-8 border border-gray-200">
                   <h4 className="text-lg font-normal tracking-wide text-gray-900 mb-3">
-                    技術者ファースト
+                    柔軟な役割の再定義
                   </h4>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    AIツールの活用、リモートワーク、成果主義。
-                    技術者が最大限パフォーマンスを発揮できる環境を追求しています。
+                    肩書きは便宜上のもの。プロジェクトや状況に応じて、
+                    誰もが複数の役割を担い、新しい挑戦ができる環境です。
                   </p>
                 </div>
               </div>
@@ -180,16 +180,20 @@ export default async function RecruitPage() {
 
               <div className="space-y-6 text-gray-300 leading-relaxed">
                 <p>
-                  私たちは「技術商社×R&D」という独特なポジションで、
+                  私たちは単なる会社ではなく「共同体」です。
+                  一人ひとりの強みを最大限に引き出し、弱みを補い合いながら進化し続けています。
+                </p>
+                <p>
+                  「技術商社×R&D」という独特なポジションで、
                   海外の最先端ツールを日本に展開しながら、独自の研究開発も進めています。
                 </p>
                 <p>
-                  大企業のような組織の階層はありません。
-                  CEOもCTOも、みんなコードを書き、顧客と話し、製品を作っています。
+                  少人数だからこそ、あなたの声が直接製品に反映されます。
+                  CEOもCTOも、全員がコードを書き、顧客と話し、共に成長していく環境です。
                 </p>
                 <p>
-                  あなたのアイデアが、そのままプロダクトになる。
-                  そんな環境で、一緒に挑戦してみませんか。
+                  役職や肩書きに縛られず、その時々で最も力を発揮できる役割を担う。
+                  そんな柔軟で創造的な働き方を、一緒に実現しませんか。
                 </p>
               </div>
 

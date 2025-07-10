@@ -96,36 +96,36 @@ export default function MissionPage() {
             <div className="text-center">
               <div className="text-4xl font-thin text-gray-900 mb-6">01</div>
               <h5 className="text-xl font-normal tracking-wide text-gray-900 mb-4">
-                Innovation
+                共同体
               </h5>
               <p className="text-gray-600 leading-relaxed">
-                常識に挑戦し、可能性を再定義する。<br />
-                既存の枠を超える思考力で、<br />
-                新しい価値を生み出す。
+                強みを引き出し合い、<br />
+                弱点を補い合いながら進む。<br />
+                最適な配置を常に見直す柔軟な組織。
               </p>
             </div>
 
             <div className="text-center">
               <div className="text-4xl font-thin text-gray-900 mb-6">02</div>
               <h5 className="text-xl font-normal tracking-wide text-gray-900 mb-4">
-                Integrity
+                革新
               </h5>
               <p className="text-gray-600 leading-relaxed">
-                技術は手段であり、目的ではない。<br />
-                人々の生活に意味ある変化をもたらし、<br />
-                社会に真の価値を提供する。
+                常識に挑戦し、可能性を再定義する。<br />
+                技術を通じて人々の生活に<br />
+                意味ある変化をもたらす。
               </p>
             </div>
 
             <div className="text-center">
               <div className="text-4xl font-thin text-gray-900 mb-6">03</div>
               <h5 className="text-xl font-normal tracking-wide text-gray-900 mb-4">
-                Impact
+                継承
               </h5>
               <p className="text-gray-600 leading-relaxed">
-                今日の大胆な発想が、<br />
-                明日の当たり前を作り出す。<br />
-                世界にポジティブな影響を与える。
+                今この瞬間を保存し、<br />
+                未来へ価値を継承する。<br />
+                時間と空間を超えた貢献を目指す。
               </p>
             </div>
           </div>

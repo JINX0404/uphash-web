@@ -63,8 +63,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 会社の考え方セクション */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8">
+              会社とは何か
+            </h2>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-lg">
+                私たちにとって会社とは、単なる法人格や組織構造ではありません。
+              </p>
+              <p>
+                それは、個々の強みを引き出し合い、最適な配置を常に見直しながら、
+                お互いの弱点を補い合って進んでいく「共同体」です。
+              </p>
+              <p>
+                UPHASHは少人数だからこそ、一人ひとりの特性を深く理解し、
+                その時々で最も力を発揮できる役割を柔軟に調整しています。
+                今日のエンジニアが明日のセールスサポートをすることもあれば、
+                CTOが顧客対応の最前線に立つこともあります。
+              </p>
+              <p>
+                この流動性と相互補完性こそが、私たちの強さの源泉です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 会社概要セクション */}
-      <section className="py-24">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             会社概要
@@ -131,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* 沿革セクション */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             沿革
@@ -166,12 +195,17 @@ export default function AboutPage() {
       </section>
 
       {/* チーム紹介セクション */}
-      <section className="py-24">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            チーム紹介
+            共同体のメンバー
           </h2>
-          <div className="mt-4 w-20 h-0.5 bg-gray-900 mb-12"></div>
+          <div className="mt-4 w-20 h-0.5 bg-gray-900 mb-8"></div>
+          
+          <p className="text-gray-700 mb-12 max-w-3xl">
+            役職は便宜上のものです。私たちは状況に応じて役割を変え、
+            お互いの強みを活かしながら、弱みを補い合っています。
+          </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {teamMembers.map((member, index) => (
