@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LayoutTransition from "@/components/motion/LayoutTransition";
 
 export const metadata: Metadata = {
   title: "UPHASH Inc. - イノベーションを通じて未来を創造",
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1 pt-20">
-          {children}
+          <LayoutTransition>
+            {children}
+          </LayoutTransition>
         </main>
         <Footer />
       </body>

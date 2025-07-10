@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const navigation = [
   { name: "HOME", href: "/" },
@@ -23,17 +24,42 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
-      <nav className="relative">
+    <motion.header 
+      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <motion.nav 
+        className="relative"
+        animate={{ 
+          boxShadow: scrolled ? "0 4px 6px -1px rgba(0, 0, 0, 0.1)" : "none" 
+        }}
+        transition={{ duration: 0.3 }}
+      >
         {/* 上部の細いライン */}
         <div className="h-px bg-gray-200"></div>
         
         <div className="px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* ロゴ */}
-            <div className="flex items-center">
+            <motion.div 
+              className="flex items-center"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <Link href="/" className="flex items-center">
                 <Image
                   src="/logo-uphash.png"
@@ -43,13 +69,24 @@ export default function Navbar() {
                   className="h-12 w-auto"
                 />
               </Link>
-            </div>
+            </motion.div>
 
             {/* デスクトップナビゲーション */}
-            <div className="hidden lg:flex items-center">
+            <motion.div 
+              className="hidden lg:flex items-center"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <div className="flex items-center space-x-1">
-                {navigation.map((item) => (
-                  <div key={item.name} className="relative">
+                {navigation.map((item, index) => (
+                  <motion.div 
+                    key={item.name} 
+                    className="relative"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                  >
                     {item.items ? (
                       <>
                         <button
@@ -60,12 +97,17 @@ export default function Navbar() {
                           {item.name}
                           <ChevronDown className="ml-1 w-3 h-3" />
                         </button>
-                        {dropdownOpen === item.name && (
-                          <div 
-                            className="absolute top-full left-0 bg-white border-t border-gray-200 shadow-lg"
-                            onMouseEnter={() => setDropdownOpen(item.name)}
-                            onMouseLeave={() => setDropdownOpen(null)}
-                          >
+                        <AnimatePresence>
+                          {dropdownOpen === item.name && (
+                            <motion.div 
+                              className="absolute top-full left-0 bg-white border-t border-gray-200 shadow-lg"
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              transition={{ duration: 0.2 }}
+                              onMouseEnter={() => setDropdownOpen(item.name)}
+                              onMouseLeave={() => setDropdownOpen(null)}
+                            >
                             {item.items.map((subItem) => (
                               <Link
                                 key={subItem.name}
@@ -75,8 +117,9 @@ export default function Navbar() {
                                 {subItem.name}
                               </Link>
                             ))}
-                          </div>
-                        )}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </>
                     ) : (
                       <Link
@@ -86,10 +129,10 @@ export default function Navbar() {
                         {item.name}
                       </Link>
                     )}
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* モバイルメニューボタン */}
             <div className="lg:hidden">
@@ -106,12 +149,19 @@ export default function Navbar() {
 
         {/* 下部の細いライン */}
         <div className="h-px bg-gray-200"></div>
-      </nav>
+      </motion.nav>
       
       {/* モバイルメニュー */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-white">
-          <div className="p-4">
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className="lg:hidden fixed inset-0 z-50 bg-white"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="p-4">
             <div className="flex items-center justify-between mb-8">
               <Image
                 src="/logo-uphash.png"
@@ -162,9 +212,10 @@ export default function Navbar() {
                 </div>
               ))}
             </nav>
-          </div>
-        </div>
-      )}
-    </header>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }
