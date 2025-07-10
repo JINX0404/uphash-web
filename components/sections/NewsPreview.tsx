@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getLatestNews } from "@/lib/markdown";
+import Image from "next/image";
+import { getLatestNews } from "@/lib/news";
 
 /**
  * ニュースプレビューセクション - NK LITE風グリッドデザイン
@@ -12,9 +13,9 @@ export default async function NewsPreview() {
       <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
         {/* セクションヘッダー */}
         <div className="text-center mb-20">
-          <h2 className="text-xs tracking-[0.3em] text-gray-600 mb-6">NEWS</h2>
+          <h2 className="text-xs tracking-[0.3em] text-gray-600 mb-6">ACTIVITY REPORT</h2>
           <h3 className="text-4xl lg:text-5xl font-thin tracking-wider text-gray-900">
-            最新情報
+            活動報告
           </h3>
         </div>
 
@@ -24,7 +25,18 @@ export default async function NewsPreview() {
             <article key={item.slug} className="group">
               <Link href={`/news/${item.slug}`} className="block">
                 <div className="overflow-hidden mb-6">
-                  <div className="h-64 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-500"></div>
+                  {item.thumbnail ? (
+                    <div className="relative h-64">
+                      <Image
+                        src={item.thumbnail}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-64 bg-gray-100 group-hover:bg-gray-200 transition-colors duration-500"></div>
+                  )}
                 </div>
                 
                 <time className="text-xs tracking-wider text-gray-500">
@@ -53,7 +65,7 @@ export default async function NewsPreview() {
             href="/news"
             className="inline-flex items-center text-sm tracking-wider text-gray-900 border-b border-gray-900 pb-1 hover:opacity-60 transition-opacity"
           >
-            すべてのニュースを見る
+            すべての活動報告を見る
           </Link>
         </div>
       </div>

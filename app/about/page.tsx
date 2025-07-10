@@ -79,18 +79,29 @@ export default function AboutPage() {
               </div>
               
               <div className="border-b border-gray-200 pb-4">
-                <dt className="text-sm font-light text-gray-600 mb-1">本社所在地</dt>
-                <dd className="text-lg text-gray-900">福岡県福岡市中央区天神１-１１−１</dd>
+                <dt className="text-sm font-light text-gray-600 mb-1">東京本社</dt>
+                <dd className="text-lg text-gray-900">
+                  〒105-6415<br />
+                  東京都港区虎ノ門１丁目１７−１
+                </dd>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-4">
+                <dt className="text-sm font-light text-gray-600 mb-1">福岡支社</dt>
+                <dd className="text-lg text-gray-900">
+                  〒810-0001<br />
+                  福岡県福岡市中央区天神１丁目１１−１
+                </dd>
               </div>
               
               <div className="border-b border-gray-200 pb-4">
                 <dt className="text-sm font-light text-gray-600 mb-1">有明開発室</dt>
-                <dd className="text-lg text-gray-900">福岡県大牟田市内</dd>
+                <dd className="text-lg text-gray-900">福岡県大牟田市（※詳細は非公開）</dd>
               </div>
               
               <div className="border-b border-gray-200 pb-4">
                 <dt className="text-sm font-light text-gray-600 mb-1">横浜研究所</dt>
-                <dd className="text-lg text-gray-900">神奈川県横浜市内</dd>
+                <dd className="text-lg text-gray-900">神奈川県横浜市（※詳細は非公開）</dd>
               </div>
             </div>
             
