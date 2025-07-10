@@ -1,56 +1,43 @@
 import Image from "next/image";
-import Link from "next/link";
 
 /**
- * ヒーローセクション - NK LITE風ミニマルデザイン
+ * ヒーローセクション - NK LITE風フルスクリーンデザイン
  */
 export default function HeroSection() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center bg-white">
-      {/* 背景画像 - 右側に配置 */}
-      <div className="absolute right-0 top-0 w-full lg:w-2/3 h-full z-0">
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* 背景画像 */}
+      <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
-          alt="Spatial Computing Vision"
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"
+          alt="Spatial Computing"
           fill
           className="object-cover"
           priority
+          quality={100}
         />
-        {/* 軽いグラデーション */}
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/20 to-white lg:to-transparent" />
       </div>
 
-      {/* コンテンツ - 左側に配置 */}
-      <div className="relative z-10 w-full">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="max-w-xl">
-            {/* メインタイトル */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
-              <span className="block text-gray-900">Spatial Computing</span>
-              <span className="block text-gray-900 mt-2">Solution</span>
-            </h1>
-            
-            {/* サブタイトル */}
-            <p className="text-xl md:text-2xl text-gray-600 font-light mb-12">
-              今のこの瞬間を保存する
-            </p>
+      {/* コンテンツオーバーレイ */}
+      <div className="absolute inset-0 bg-black/20" />
+      
+      {/* メインコンテンツ */}
+      <div className="relative h-full flex items-center justify-center">
+        <div className="text-center text-white px-4">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-thin tracking-wider mb-8">
+            <span className="block">SPATIAL</span>
+            <span className="block mt-2">COMPUTING</span>
+          </h1>
+          <p className="text-lg md:text-xl lg:text-2xl font-thin tracking-widest">
+            今のこの瞬間を保存する
+          </p>
+        </div>
+      </div>
 
-            {/* CTAボタン - シンプルなデザイン */}
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-light tracking-wider text-white bg-gray-900 hover:bg-gray-800 transition-all duration-300"
-              >
-                私たちについて
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-light tracking-wider text-gray-900 border border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
-              >
-                お問い合わせ
-              </Link>
-            </div>
-          </div>
+      {/* スクロールインジケーター */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-6 h-10 border border-white/50 rounded-full flex items-start justify-center p-1">
+          <div className="w-1 h-3 bg-white/70 rounded-full animate-bounce"></div>
         </div>
       </div>
     </section>
