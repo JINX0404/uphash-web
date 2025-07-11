@@ -7,6 +7,12 @@ import LayoutTransition from "@/components/motion/LayoutTransition";
 export const metadata: Metadata = {
   title: "UPHASH Inc. - イノベーションを通じて未来を創造",
   description: "UPHASH Inc.は最先端技術とイノベーションを通じて、より良い未来を創造します。",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
