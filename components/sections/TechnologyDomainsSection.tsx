@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import ScrollReveal from '@/components/motion/ScrollReveal'
+import PlaceholderImage from '@/components/PlaceholderImage'
 
 const technologyDomains = [
   {
-    icon: '🧠',
+    iconText: 'GAME ENGINE AI',
     title: 'ゲームエンジン×AIによる空間ソリューション',
     description: [
       'Unreal Engine / Unityなどを用いた空間可視化・XRシミュレーション',
@@ -16,7 +17,7 @@ const technologyDomains = [
     ctaLink: '/contact'
   },
   {
-    icon: '🔬',
+    iconText: 'R&D COLLABORATION',
     title: '研究機関との共同研究・技術開発',
     description: [
       '国内外の大手研究所との連携によるプロトコル設計・検証',
@@ -26,7 +27,7 @@ const technologyDomains = [
     ctaLink: '/contact'
   },
   {
-    icon: '📸',
+    iconText: 'PBR PHOTOGRAMMETRY',
     title: 'PBRベースのフォトグラメトリー',
     description: [
       '物理的に忠実な材質・光反応の再現',
@@ -36,7 +37,7 @@ const technologyDomains = [
     ctaLink: '/contact'
   },
   {
-    icon: '🏞',
+    iconText: '3D AI RECONSTRUCTION',
     title: '3D写真空間のAI再構築',
     description: [
       '写真やスキャンデータからAIによる空間生成・補完',
@@ -46,7 +47,7 @@ const technologyDomains = [
     ctaLink: '/contact'
   },
   {
-    icon: '🌀',
+    iconText: 'GAUSSIAN SPLATTING',
     title: 'Gaussian Splattingなど次世代技術の先行展開',
     description: [
       '海外発の最新研究技術（3DGS等）を日本市場で最速導入・検証',
@@ -93,7 +94,16 @@ export default function TechnologyDomainsSection() {
                 className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex items-start gap-6">
-                  <div className="text-4xl flex-shrink-0">{domain.icon}</div>
+                  <div className="flex-shrink-0">
+                    <PlaceholderImage 
+                      width={80} 
+                      height={80} 
+                      text={domain.iconText}
+                      className="rounded-lg"
+                      bgColor="#f3f4f6"
+                      textColor="#374151"
+                    />
+                  </div>
                   <div className="flex-1">
                     <h4 className="text-xl font-medium mb-4 text-gray-800">
                       {domain.title}
