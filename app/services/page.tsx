@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import TechnologyDomainsSection from "@/components/sections/TechnologyDomainsSection";
 
 export const metadata: Metadata = {
   title: "製品・サービス | UPHASH Inc.",
@@ -127,6 +128,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* 技術領域と挑戦 */}
+      <TechnologyDomainsSection />
 
       {/* テクノロジーセクション */}
       <section className="py-20 bg-gray-50">
