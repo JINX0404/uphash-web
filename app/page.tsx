@@ -1,6 +1,7 @@
 import { Metadata } from "next";
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSectionV2 from "@/components/sections/HeroSectionV2";
 import CompanyInfo from "@/components/sections/CompanyInfo";
+import CompanyMetricsSection from "@/components/sections/CompanyMetricsSection";
 import TechnologyTrustSection from "@/components/sections/TechnologyTrustSection";
 import NewsPreviewWrapper from "@/components/sections/NewsPreviewWrapper";
 import CTASection from "@/components/sections/CTASection";
@@ -33,7 +34,10 @@ export default function Home() {
   return (
     <>
       {/* ヒーローセクション */}
-      <HeroSection />
+      <HeroSectionV2 />
+
+      {/* 実績・数値指標 */}
+      <CompanyMetricsSection />
 
       {/* 会社紹介サマリー */}
       <CompanyInfo />
