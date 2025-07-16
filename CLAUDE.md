@@ -3,6 +3,11 @@
 ## プロジェクト概要
 UPHASH Inc.の公式ウェブサイト。Next.js 15 (App Router) + TypeScript + Tailwind CSSで構築。
 
+## デプロイ情報
+- **Vercel URL**: https://uphash.vercel.app/
+- **本番URL（予定）**: https://uphash.com
+- **GitHubリポジトリ**: https://github.com/JINX0404/uphash-web
+
 ## 開発環境セットアップ
 
 ```bash
@@ -176,3 +181,8 @@ tags: ["AI", "技術"]
 - [ ] アクセシビリティ向上
 - [ ] パフォーマンス最適化
 - [ ] E2Eテストの追加
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

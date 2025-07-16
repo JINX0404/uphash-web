@@ -105,9 +105,17 @@ export default function Footer() {
             <p className="text-xs text-gray-500 tracking-wider">
               &copy; {new Date().getFullYear()} UPHASH Inc. All rights reserved.
             </p>
-            <p className="text-xs text-gray-500 tracking-wider mt-4 md:mt-0">
-              Spatial Computing Solution
-            </p>
+            <div className="flex items-center gap-6 mt-4 md:mt-0">
+              <Link href="/privacy-policy" className="text-xs text-gray-500 hover:text-white transition-colors">
+                プライバシーポリシー
+              </Link>
+              <Link href="/terms-of-service" className="text-xs text-gray-500 hover:text-white transition-colors">
+                利用規約
+              </Link>
+              <Link href="/cookie-policy" className="text-xs text-gray-500 hover:text-white transition-colors">
+                Cookieポリシー
+              </Link>
+            </div>
           </div>
         </div>
       </div>

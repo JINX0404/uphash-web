@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import packageJson from "../package.json"
 
 const navigation = [
   { name: "HOME", href: "/" },
@@ -60,7 +61,7 @@ export default function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center gap-2">
                 <Image
                   src="/logo-uphash.png"
                   alt="UPHASH"
@@ -68,6 +69,9 @@ export default function Navbar() {
                   height={60}
                   className="h-12 w-auto"
                 />
+                <span className="text-xs text-gray-400 font-mono">
+                  v{packageJson.version}
+                </span>
               </Link>
             </motion.div>
 
@@ -163,13 +167,18 @@ export default function Navbar() {
           >
             <div className="p-4">
             <div className="flex items-center justify-between mb-8">
-              <Image
-                src="/logo-uphash.png"
-                alt="UPHASH"
-                width={160}
-                height={60}
-                className="h-12 w-auto"
-              />
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/logo-uphash.png"
+                  alt="UPHASH"
+                  width={160}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+                <span className="text-xs text-gray-400 font-mono">
+                  v{packageJson.version}
+                </span>
+              </div>
               <button
                 type="button"
                 className="p-2"
