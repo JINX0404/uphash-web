@@ -5,6 +5,13 @@ import Footer from "@/components/Footer";
 import LayoutTransition from "@/components/motion/LayoutTransition";
 import CookieBanner from "@/components/CookieBanner";
 import StructuredData, { organizationSchema, websiteSchema } from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/next";
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://uphash.com'),
@@ -84,6 +91,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
