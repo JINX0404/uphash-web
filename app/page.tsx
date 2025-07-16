@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HeroSection from "@/components/sections/HeroSection";
 import CompanyInfo from "@/components/sections/CompanyInfo";
+import TechnologyTrustSection from "@/components/sections/TechnologyTrustSection";
 import NewsPreviewWrapper from "@/components/sections/NewsPreviewWrapper";
 import CTASection from "@/components/sections/CTASection";
 
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* 会社紹介サマリー */}
       <CompanyInfo />
+
+      {/* 技術基盤と知財 */}
+      <TechnologyTrustSection />
 
       {/* 最新ニュース */}
       <NewsPreviewWrapper />
