@@ -1,6 +1,6 @@
 {
   "name": "uphash-web",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,6 +12,7 @@
     "@formspree/react": "^3.0.0",
     "@stripe/stripe-js": "^7.4.0",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.21",
     "express": "^5.1.0",
     "framer-motion": "^12.23.3",
