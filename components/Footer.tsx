@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import XGridsBanner from "@/components/XGridsBanner";
 
 /**
  * フッター - NK LITE風ミニマルデザイン
@@ -79,24 +80,8 @@ export default function Footer() {
         </div>
 
         {/* XGRIDS特設サイトリンク */}
-        <div className="mt-16 p-8 bg-gray-800 rounded-lg">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0">
-              <h4 className="text-sm tracking-wider text-gray-300 mb-2">XGRIDS製品特設サイト</h4>
-              <p className="text-xs text-gray-400">空間コンピューティングソリューションの詳細はこちら</p>
-            </div>
-            <a 
-              href="https://xgrids.uphash.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 text-sm tracking-wider text-gray-900 bg-white hover:bg-gray-100 transition-colors"
-            >
-              XGRIDS製品ページはこちら
-              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
+        <div className="mt-16">
+          <XGridsBanner />
         </div>
 
         {/* 下部 */}
