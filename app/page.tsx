@@ -7,11 +7,11 @@ import NewsPreviewWrapper from "@/components/sections/NewsPreviewWrapper";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "UPHASH Inc. - イノベーションを通じて未来を創造",
-  description: "UPHASH Inc.は最先端技術とイノベーションを通じて、より良い未来を創造します。AI、ブロックチェーン、デジタルトランスフォーメーションのソリューションを提供。",
+  title: "UPHASH Inc. - 最先端を、現場の力に。",
+  description: "研究室の技術を産業の現場へ。空間コンピューティングとAIの最先端技術を、実用的なソリューションとして提供します。",
   openGraph: {
-    title: "UPHASH Inc. - イノベーションを通じて未来を創造",
-    description: "UPHASH Inc.は最先端技術とイノベーションを通じて、より良い未来を創造します。",
+    title: "UPHASH Inc. - 最先端を、現場の力に。",
+    description: "研究室の技術を産業の現場へ。空間コンピューティングとAIの最先端技術を、実用的なソリューションとして提供します。",
     url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "UPHASH Inc.",
     images: [

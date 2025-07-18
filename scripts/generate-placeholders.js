@@ -17,6 +17,50 @@ const placeholders = [
   { filename: 'cfo-appointment-placeholder.jpg', text: 'New CFO\nAppointment' }
 ]
 
+// 会社概要ページ用のプレースホルダー
+const aboutPlaceholders = [
+  { 
+    filename: 'team/imai.jpg', 
+    text: 'CEO\n今井翔太',
+    description: 'CEO今井翔太のプロフィール写真。プロフェッショナルなポートレート写真。背景はシンプルで、スーツまたはビジネスカジュアルな服装。明るく親しみやすい表情。'
+  },
+  { 
+    filename: 'team/oshio.jpg', 
+    text: 'CTO\n大塩悠貴',
+    description: 'CTO大塩悠貴のプロフィール写真。技術者らしい知的な雰囲気のポートレート。背景はシンプルかオフィス環境。カジュアルまたはビジネスカジュアルな服装。'
+  },
+  {
+    filename: 'about/office-tokyo.jpg',
+    text: 'Tokyo Office\n虎ノ門',
+    description: '東京本社のオフィス外観または内観。虎ノ門の高層ビル、モダンなオフィス空間。都会的でプロフェッショナルな雰囲気。'
+  },
+  {
+    filename: 'about/office-fukuoka.jpg',
+    text: 'Fukuoka Office\n天神',
+    description: '福岡支社のオフィス外観または内観。天神のビジネス地区、明るく開放的なオフィス空間。'
+  },
+  {
+    filename: 'about/lab-ariake.jpg',
+    text: 'Ariake Lab\n有明開発室',
+    description: '有明開発室の様子。研究開発に適した環境、実験機器や開発環境が整った空間。'
+  },
+  {
+    filename: 'about/lab-yokohama.jpg',
+    text: 'Yokohama Lab\n横浜研究所',
+    description: '横浜研究所の様子。最先端の研究施設、3Dスキャナーやコンピュータが並ぶ研究環境。'
+  },
+  {
+    filename: 'about/company-culture.jpg',
+    text: 'Company Culture\n企業文化',
+    description: 'チームメンバーが協力して働いている様子。ミーティング風景やブレインストーミングの場面。明るく創造的な雰囲気。'
+  },
+  {
+    filename: 'about/technology-stack.jpg',
+    text: 'Technology Stack\n技術スタック',
+    description: '空間コンピューティング技術を表現する抽象的なビジュアル。3Dスキャン、AI、クラウドを示すアイコンやグラフィック。'
+  }
+]
+
 function generatePlaceholder(width, height, text, outputPath) {
   const canvas = createCanvas(width, height)
   const ctx = canvas.getContext('2d')
@@ -99,4 +143,33 @@ placeholders.forEach(({ filename, text }) => {
   generatePlaceholder(1200, 630, text, outputPath)
 })
 
-console.log(`Generated ${placeholders.length} placeholder images`)
+// Generate about page placeholders
+aboutPlaceholders.forEach(({ filename, text }) => {
+  const outputPath = path.join(outputDir, filename)
+  const dir = path.dirname(outputPath)
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+  }
+  
+  // Different sizes for different types
+  if (filename.includes('team/')) {
+    generatePlaceholder(400, 400, text, outputPath) // Square for profile photos
+  } else {
+    generatePlaceholder(1200, 630, text, outputPath) // Standard for other images
+  }
+})
+
+console.log(`Generated ${placeholders.length + aboutPlaceholders.length} placeholder images`)
+
+// Generate image descriptions file
+const imageDescriptions = aboutPlaceholders.map(img => ({
+  path: `/images/${img.filename}`,
+  description: img.description
+}))
+
+fs.writeFileSync(
+  path.join(__dirname, '..', 'public', 'images', 'image-descriptions.json'),
+  JSON.stringify(imageDescriptions, null, 2)
+)
+
+console.log('Generated image descriptions file')

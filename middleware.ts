@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>認証が必要です - UPHASH Inc.</title>
+          <title>工事中 - UPHASH Inc.</title>
           <link rel="icon" href="/favicon.ico" />
           <style>
             * {
@@ -53,6 +53,23 @@ export function middleware(request: NextRequest) {
               justify-content: center;
               min-height: 100vh;
               padding: 20px;
+              position: relative;
+            }
+            body::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-image: repeating-linear-gradient(
+                45deg,
+                rgba(0, 0, 0, 0.03),
+                rgba(0, 0, 0, 0.03) 10px,
+                transparent 10px,
+                transparent 20px
+              );
+              pointer-events: none;
             }
             .auth-container {
               background-color: white;
@@ -61,6 +78,13 @@ export function middleware(request: NextRequest) {
               padding: 40px;
               max-width: 400px;
               width: 100%;
+              border: 2px dashed #ddd;
+            }
+            .construction-icon {
+              width: 60px;
+              height: 60px;
+              margin: 0 auto 20px;
+              display: block;
             }
             .logo {
               font-size: 32px;
@@ -127,8 +151,15 @@ export function middleware(request: NextRequest) {
         </head>
         <body>
           <div class="auth-container">
+            <svg class="construction-icon" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
             <div class="logo">UPHASH</div>
-            <h1>認証が必要です</h1>
+            <h1>サイト工事中</h1>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px; text-align: center;">
+              現在ウェブサイトは準備中です。<br>
+              関係者の方はパスワードを入力してください。
+            </p>
             <form id="authForm">
               <div class="form-group">
                 <label for="password">パスワード</label>

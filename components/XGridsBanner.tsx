@@ -1,10 +1,27 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 
 export default function XGridsBanner() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [dimensions, setDimensions] = useState({ width: 1200, height: 120 })
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth
+        const newWidth = Math.min(containerWidth, 1200)
+        const newHeight = Math.max(80, Math.min(120, newWidth / 10)) // Smaller height
+        setDimensions({ width: newWidth, height: newHeight })
+      }
+    }
+
+    updateDimensions()
+    window.addEventListener('resize', updateDimensions)
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -14,8 +31,8 @@ export default function XGridsBanner() {
     if (!ctx) return
 
     // Set canvas size
-    canvas.width = 1200
-    canvas.height = 300
+    canvas.width = dimensions.width
+    canvas.height = dimensions.height
 
     // Background gradient
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0)
@@ -41,17 +58,19 @@ export default function XGridsBanner() {
       ctx.stroke()
     }
 
-    // XGRIDS Text
-    ctx.font = 'bold 72px sans-serif'
+    // XGRIDS Text - responsive font size
+    const mainFontSize = Math.max(20, Math.min(36, dimensions.width / 33))
+    ctx.font = `bold ${mainFontSize}px sans-serif`
     ctx.fillStyle = '#ffffff'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
-    ctx.fillText('XGRIDS', canvas.width / 2, canvas.height / 2 - 20)
+    ctx.fillText('XGRIDS', canvas.width / 2, canvas.height / 2 - 5)
 
-    // Subtitle
-    ctx.font = '20px sans-serif'
+    // Subtitle - responsive font size
+    const subFontSize = Math.max(10, Math.min(14, dimensions.width / 85))
+    ctx.font = `${subFontSize}px sans-serif`
     ctx.fillStyle = 'rgba(255, 255, 255, 0.7)'
-    ctx.fillText('Spatial Computing Solution', canvas.width / 2, canvas.height / 2 + 40)
+    ctx.fillText('Spatial Computing Solution', canvas.width / 2, canvas.height / 2 + 18)
 
     // Decorative elements
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)'
@@ -102,10 +121,10 @@ export default function XGridsBanner() {
     ctx.lineTo(canvas.width, canvas.height - cornerSize)
     ctx.stroke()
 
-  }, [])
+  }, [dimensions])
 
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden">
+    <div ref={containerRef} className="bg-gray-800 rounded-lg overflow-hidden">
       <a 
         href="https://xgrids.uphash.net/"
         target="_blank"
@@ -129,25 +148,23 @@ export default function XGridsBanner() {
         </div>
       </a>
       
-      {/* Banner info section */}
-      <div className="p-6 bg-gray-900">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0 text-center md:text-left">
-            <h4 className="text-sm tracking-wider text-gray-300 mb-2">XGRIDS製品特設サイト</h4>
-            <p className="text-xs text-gray-400">空間コンピューティングソリューションの詳細はこちら</p>
-          </div>
-          <Link
-            href="https://xgrids.uphash.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 text-sm tracking-wider text-gray-900 bg-white hover:bg-gray-100 transition-colors"
-          >
-            XGRIDS製品ページはこちら
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </Link>
+      {/* Compact banner info section - responsive */}
+      <div className="px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          <span className="text-xs tracking-wider text-gray-400 hidden sm:inline">PRODUCT</span>
+          <h4 className="text-xs sm:text-sm font-medium text-gray-200">XGRIDS - 空間コンピューティングソリューション</h4>
         </div>
+        <Link
+          href="https://xgrids.uphash.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs font-medium text-gray-300 hover:text-white transition-colors"
+        >
+          詳細を見る
+          <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
       </div>
     </div>
   )

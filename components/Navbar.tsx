@@ -94,7 +94,7 @@ export default function Navbar() {
                     {item.items ? (
                       <>
                         <button
-                          className="px-6 py-2 text-xs tracking-widest text-gray-700 hover:text-gray-900 transition-colors duration-200 flex items-center"
+                          className="px-6 py-3 text-xs tracking-widest text-gray-700 hover:text-gray-900 transition-colors duration-200 flex items-center min-h-[44px]"
                           onMouseEnter={() => setDropdownOpen(item.name)}
                           onMouseLeave={() => setDropdownOpen(null)}
                         >
@@ -128,7 +128,7 @@ export default function Navbar() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="px-6 py-2 text-xs tracking-widest text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                        className="px-6 py-3 text-xs tracking-widest text-gray-700 hover:text-gray-900 transition-colors duration-200 flex items-center min-h-[44px]"
                       >
                         {item.name}
                       </Link>
@@ -138,12 +138,13 @@ export default function Navbar() {
               </div>
             </motion.div>
 
-            {/* モバイルメニューボタン */}
+            {/* モバイルメニューボタン - 44px minimum touch target */}
             <div className="lg:hidden">
               <button
                 type="button"
-                className="p-2"
+                className="p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(true)}
+                aria-label="メニューを開く"
               >
                 <Menu className="h-6 w-6 text-gray-700" />
               </button>
@@ -181,8 +182,9 @@ export default function Navbar() {
               </div>
               <button
                 type="button"
-                className="p-2"
+                className="p-3 -mr-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
+                aria-label="メニューを閉じる"
               >
                 <X className="h-6 w-6 text-gray-700" />
               </button>
@@ -193,7 +195,7 @@ export default function Navbar() {
                 <div key={item.name}>
                   {item.items ? (
                     <>
-                      <div className="px-4 py-3 text-sm tracking-wider text-gray-900 font-medium">
+                      <div className="px-4 py-4 text-sm tracking-wider text-gray-900 font-medium">
                         {item.name}
                       </div>
                       <div className="ml-4">
@@ -201,7 +203,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="block px-4 py-3 text-sm tracking-wider text-gray-600 hover:bg-gray-50"
+                            className="block px-4 py-4 text-sm tracking-wider text-gray-600 hover:bg-gray-50 min-h-[44px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {subItem.name}
@@ -212,7 +214,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-4 py-4 text-sm tracking-wider text-gray-700 hover:bg-gray-50"
+                      className="block px-4 py-4 text-sm tracking-wider text-gray-700 hover:bg-gray-50 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}

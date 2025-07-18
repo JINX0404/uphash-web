@@ -1,0 +1,34 @@
+[
+  {
+    "path": "/images/team/imai.jpg",
+    "description": "CEO今井翔太のプロフィール写真。プロフェッショナルなポートレート写真。背景はシンプルで、スーツまたはビジネスカジュアルな服装。明るく親しみやすい表情。"
+  },
+  {
+    "path": "/images/team/oshio.jpg",
+    "description": "CTO大塩悠貴のプロフィール写真。技術者らしい知的な雰囲気のポートレート。背景はシンプルかオフィス環境。カジュアルまたはビジネスカジュアルな服装。"
+  },
+  {
+    "path": "/images/about/office-tokyo.jpg",
+    "description": "東京本社のオフィス外観または内観。虎ノ門の高層ビル、モダンなオフィス空間。都会的でプロフェッショナルな雰囲気。"
+  },
+  {
+    "path": "/images/about/office-fukuoka.jpg",
+    "description": "福岡支社のオフィス外観または内観。天神のビジネス地区、明るく開放的なオフィス空間。"
+  },
+  {
+    "path": "/images/about/lab-ariake.jpg",
+    "description": "有明開発室の様子。研究開発に適した環境、実験機器や開発環境が整った空間。"
+  },
+  {
+    "path": "/images/about/lab-yokohama.jpg",
+    "description": "横浜研究所の様子。最先端の研究施設、3Dスキャナーやコンピュータが並ぶ研究環境。"
+  },
+  {
+    "path": "/images/about/company-culture.jpg",
+    "description": "チームメンバーが協力して働いている様子。ミーティング風景やブレインストーミングの場面。明るく創造的な雰囲気。"
+  },
+  {
+    "path": "/images/about/technology-stack.jpg",
+    "description": "空間コンピューティング技術を表現する抽象的なビジュアル。3Dスキャン、AI、クラウドを示すアイコンやグラフィック。"
+  }
+]

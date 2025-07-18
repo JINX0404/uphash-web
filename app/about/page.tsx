@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "会社概要 | UPHASH Inc.",
-  description: "私たちは、現実を保存する会社です。空間と情報をつなぎ、次の社会基盤をデザインします。",
+  description: "最先端の研究成果を、実用的なソリューションへ。論文の中の技術を、産業の現場で活きる力に変えます。",
   openGraph: {
     title: "会社概要 | UPHASH Inc.",
-    description: "私たちは、現実を保存する会社です。空間と情報をつなぎ、次の社会基盤をデザインします。",
+    description: "最先端の研究成果を、実用的なソリューションへ。論文の中の技術を、産業の現場で活きる力に変えます。",
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
     siteName: "UPHASH Inc.",
     locale: "ja_JP",
@@ -75,7 +76,7 @@ export default function AboutPage() {
             会社概要
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl">
-            私たちは、現実を保存する会社です。空間と情報をつなぎ、次の社会基盤をデザインします。
+            最先端の研究成果を、実用的なソリューションへ。論文の中の技術を、産業の現場で活きる力に変えます。
           </p>
         </div>
       </section>
@@ -147,8 +148,76 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 会社概要セクション */}
+      {/* オフィス・拠点紹介セクション */}
       <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            拠点紹介
+          </h2>
+          <div className="mt-4 w-20 h-0.5 bg-gray-900 mb-12"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* 東京本社 */}
+            <div className="group">
+              <div className="relative h-64 md:h-80 mb-6 overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/news/about/office-tokyo.jpg"
+                  alt="東京本社 - 虎ノ門"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-xl font-normal text-gray-900 mb-2">東京本社</h3>
+              <p className="text-gray-600">最先端のビジネス拠点で、グローバルな企業活動を展開</p>
+            </div>
+            
+            {/* 福岡支社 */}
+            <div className="group">
+              <div className="relative h-64 md:h-80 mb-6 overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/news/about/office-fukuoka.jpg"
+                  alt="福岡支社 - 天神"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-xl font-normal text-gray-900 mb-2">福岡支社</h3>
+              <p className="text-gray-600">創業の地で、研究開発とエンジニアリングの中核を担う</p>
+            </div>
+            
+            {/* 有明開発室 */}
+            <div className="group">
+              <div className="relative h-64 md:h-80 mb-6 overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/news/about/lab-ariake.jpg"
+                  alt="有明開発室"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-xl font-normal text-gray-900 mb-2">有明開発室</h3>
+              <p className="text-gray-600">新技術の実験とプロトタイプ開発を行う秘密のラボ</p>
+            </div>
+            
+            {/* 横浜研究所 */}
+            <div className="group">
+              <div className="relative h-64 md:h-80 mb-6 overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/news/about/lab-yokohama.jpg"
+                  alt="横浜研究所"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-xl font-normal text-gray-900 mb-2">横浜研究所</h3>
+              <p className="text-gray-600">空間コンピューティングの基礎研究を推進</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 会社概要セクション */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             会社概要
@@ -209,6 +278,44 @@ export default function AboutPage() {
                 <dt className="text-sm font-light text-gray-600 mb-1">主要取引銀行</dt>
                 <dd className="text-lg text-gray-900">三井住友銀行</dd>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 技術スタックセクション */}
+      <section className="py-24 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              私たちの技術
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              空間コンピューティングとAIの融合で、新たな価値を創造します
+            </p>
+          </div>
+          
+          <div className="relative h-96 md:h-[500px] mb-12">
+            <Image
+              src="/images/news/about/technology-stack.jpg"
+              alt="UPHASHの技術スタック"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-xl font-normal mb-4">3D Scanning</h3>
+              <p className="text-gray-400">高精度な空間データの取得と処理</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-normal mb-4">AI Processing</h3>
+              <p className="text-gray-400">最先端の機械学習と画像認識</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-normal mb-4">Cloud Platform</h3>
+              <p className="text-gray-400">スケーラブルなクラウド基盤</p>
             </div>
           </div>
         </div>
@@ -295,18 +402,12 @@ export default function AboutPage() {
                   {/* 写真プレースホルダー */}
                   <div className="flex-shrink-0">
                     <div className="relative w-32 h-32 md:w-40 md:h-40 bg-gray-200 overflow-hidden">
-                      {/* 実際の画像が来たら以下のコメントを外す */}
-                      {/* <Image
+                      <Image
                         src={member.image}
                         alt={member.name}
                         fill
                         className="object-cover"
-                      /> */}
-                      <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                        </svg>
-                      </div>
+                      />
                     </div>
                   </div>
                   

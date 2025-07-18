@@ -41,14 +41,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* ヒーローセクション */}
-      <section className="relative py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-screen-xl mx-auto px-4 lg:px-8">
+      <section className="relative py-16 sm:py-20 lg:py-32 bg-gray-50">
+        <div className="max-w-screen-xl mx-auto px-6 sm:px-8 lg:px-8">
           <div className="text-center">
-            <h1 className="text-xs tracking-[0.3em] text-gray-600 mb-6">CONTACT</h1>
-            <h2 className="text-4xl lg:text-5xl font-thin tracking-wider text-gray-900 mb-8">
+            <h1 className="text-xs tracking-[0.2em] sm:tracking-[0.3em] text-gray-600 mb-4 sm:mb-6">CONTACT</h1>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-thin tracking-wider text-gray-900 mb-6 sm:mb-8">
               お問い合わせ
             </h2>
-            <p className="text-lg font-thin text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg font-thin text-gray-600 max-w-2xl mx-auto px-4 sm:px-0">
               ご質問・ご相談などございましたら、お気軽にお問い合わせください
             </p>
           </div>
@@ -56,8 +56,8 @@ export default function ContactPage() {
       </section>
 
       {/* フォームセクション */}
-      <section className="py-20">
-        <div className="max-w-2xl mx-auto px-4 lg:px-8">
+      <section className="py-12 sm:py-16 md:py-20">
+        <div className="max-w-2xl mx-auto px-6 sm:px-8 lg:px-8">
           <form onSubmit={onSubmit} className="space-y-12">
             {/* お名前 */}
             <div>
@@ -126,27 +126,6 @@ export default function ContactPage() {
               </button>
             </div>
           </form>
-
-          {/* 補足情報 */}
-          <div className="mt-20 pt-12 border-t border-gray-200">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-sm tracking-wider text-gray-900 mb-4">メールでのお問い合わせ</h3>
-                <p className="text-gray-600">
-                  <a href="mailto:info@uphash.co.jp" className="hover:opacity-60 transition-opacity">
-                    info@uphash.co.jp
-                  </a>
-                </p>
-              </div>
-              <div>
-                <h3 className="text-sm tracking-wider text-gray-900 mb-4">本社所在地</h3>
-                <p className="text-gray-600">
-                  〒810-0001<br />
-                  福岡県福岡市中央区天神1-11-1
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>
